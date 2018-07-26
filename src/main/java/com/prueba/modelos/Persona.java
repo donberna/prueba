@@ -1,15 +1,22 @@
 package com.prueba.modelos;
 
-
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 
 public class Persona {
 
+	@Id
+	ObjectId _id;
 	private int cedula;
 	private String nombres;
 	private String apellidos;
 	
 	Persona(){}
 
+	public String get_id() { 
+		return _id.toHexString(); 
+	}
+	
 	public int getCedula() {
 		return cedula;
 	}

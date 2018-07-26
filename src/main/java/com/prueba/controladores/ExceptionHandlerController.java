@@ -15,7 +15,7 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler()
     public ResponseEntity handleCustomActivoException(CustomActivoException cae) {
-        ApiError ae = new ApiError(cae.getMessage());
+        ApiError ae = new ApiError(cae.getMessage(), cae.getEstado());
         return new ResponseEntity<ApiError>(ae, cae.getEstado());
     }
 }

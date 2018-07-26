@@ -19,6 +19,7 @@ public class CustomActivoException extends RuntimeException{
         this.estado = estado;
     }
 
+    
     public HttpStatus getEstado (){ return this.estado; }
 
 }

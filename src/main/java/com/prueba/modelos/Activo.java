@@ -2,13 +2,17 @@ package com.prueba.modelos;
 
 
 import java.util.Date;
+
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
+@Document(collection = "activo")
 public class Activo {
 
 	@Id
-    private String id;
+	ObjectId _id;
 	private String nombre;
 	private String descripcion;
 	private String tipo;
@@ -29,6 +33,10 @@ public class Activo {
 	
 	Activo(){}
 
+	public String get_id() { 
+		return _id.toHexString(); 
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -139,6 +147,31 @@ public class Activo {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
+	}
+	
+	public boolean esFechaBajaMayorAFechaCompra() {
+		
+		if(this.fechaBaja.getTime() > this.fechaCompra.getTime()) {
+			return true;
+		}
+		
+		return false;
 	}
 
 }

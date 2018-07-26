@@ -23,10 +23,10 @@ public class ApiRestController {
 	@Autowired
 	private ActivoService activoService;
 	
-	@RequestMapping(value = "/consultar/{serial}", method = RequestMethod.GET)
-    public ResponseEntity<?> consultarPorSerial(@PathVariable("serial") String serial) throws CustomActivoException {
+	@RequestMapping(value = "/consultar/{numeroInternoInventario}", method = RequestMethod.GET)
+    public ResponseEntity<?> consultarPorNumeroInternoInventario(@PathVariable("numeroInternoInventario") int numeroInternoInventario){
 
-        Activo activo = activoService.consultarPorSerial(serial);
+        Activo activo = activoService.consultarPorNumeroInternoInventario(numeroInternoInventario);        
         return new ResponseEntity<Activo>(activo, HttpStatus.OK);
     }
 	
