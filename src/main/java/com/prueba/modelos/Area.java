@@ -9,9 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Area {
 	
 	@Id
-	String _id;
+	private	String _id;
 	private int codigo;
 	private String nombre;
+	private Ciudad ciudad;
+	
 	
 	Area(){}
 
@@ -33,6 +35,14 @@ public class Area {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
 	}
 	
 	

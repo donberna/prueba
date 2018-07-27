@@ -22,8 +22,7 @@ public class ActivoService {
 		if(activo == null) {
         	throw new CustomActivoException(HttpStatus.NOT_FOUND, "No se encuentra el registro");
         }
-		
-		System.out.println(activo);
+	
 		return activo;
 	}
 	

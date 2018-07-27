@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Persona {
 
 	@Id
-	String _id;
+	private String _id;
 	private int cedula;
 	private String nombres;
 	private String apellidos;
