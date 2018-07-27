@@ -2,11 +2,14 @@ package com.prueba.modelos;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Document(collection = "persona")
 public class Persona {
 
 	@Id
-	ObjectId _id;
+	String _id;
 	private int cedula;
 	private String nombres;
 	private String apellidos;
@@ -14,7 +17,7 @@ public class Persona {
 	Persona(){}
 
 	public String get_id() { 
-		return _id.toHexString(); 
+		return _id; 
 	}
 	
 	public int getCedula() {

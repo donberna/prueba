@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Activo {
 
 	@Id
-	ObjectId _id;
+	String _id;
 	private String nombre;
 	private String descripcion;
 	private String tipo;
@@ -34,7 +34,7 @@ public class Activo {
 	Activo(){}
 
 	public String get_id() { 
-		return _id.toHexString(); 
+		return _id; 
 	}
 	
 	public String getNombre() {
