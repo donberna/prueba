@@ -58,6 +58,9 @@ public class ActivoService {
 			throw new CustomActivoException(HttpStatus.BAD_REQUEST, "fecha de baja mayor a fecha de compra");
 		}
 		
-		activoRepository.save(activo);
+		activoBD.setSerial(activo.getSerial());
+		activoBD.setFechaBaja(activo.getFechaBaja());
+		
+		activoRepository.save(activoBD);
 	}	
 }
